@@ -1,3 +1,4 @@
+import AboutProject from "./AboutProject";
 import AboutSkill from "./AboutSkill";
 import Label from "./Label";
 
@@ -6,6 +7,8 @@ export default function About() {
     <div className="bg-secondary p-6">
       <Label label="" value="Tools" />
       <AboutSkill />
+      <Label label="" value="Projects"  />
+      <AboutProject/>
     </div>
   );
 }
