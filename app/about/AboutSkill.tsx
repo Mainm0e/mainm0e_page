@@ -42,7 +42,8 @@ export default function AboutSkill() {
       {isLoading ? ( // Check if data is loading
         // Display loading animation here
         <div className="flex flex-row items-center justify-center">
-         <span className="loading loading-dots loading-lg"></span>
+        <span className="loading loading-spinner loading-lg"></span>
+
         </div>
       ) : (
         <div className="flex flex-col md:flex-row">
