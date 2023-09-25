@@ -1,4 +1,7 @@
-import ContactForm from "../components/ContactForm";
+//import ContactForm from "./ContactForm"
+import OnlyContact from "./OnlyContact";
+// import assest
+
 
 export default function Contact() {
 
@@ -17,7 +20,12 @@ export default function Contact() {
 
       {/* Right side */}
       <div className="w-1/2 flex items-center justify-center">
-        <ContactForm />
+      <OnlyContact
+        name="John Doe"
+        email="john@example.com"
+        phone="123-456-7890"
+        imageUrl="./images/home.jpg"
+      />
       </div>
     </main>
   );
