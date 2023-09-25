@@ -1,7 +1,7 @@
 import Image from "next/image";
 export default function OnlyContact(props: {name: string, email: string, phone: string, imageUrl: string}){
   return (
-    <div className="bg-white shadow-md rounded-lg p-6 max-w-sm mx-auto">
+    <div className="bg-primary shadow-md rounded-lg p-6 max-w-sm mx-auto">
       <img
         src={props.imageUrl}
         alt={props.name}
