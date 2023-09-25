@@ -21,7 +21,7 @@ function Navbar() {
             href="/about_me"
             className={`flex md:inline-flex p-4 items-center hover:text-blue-500`}
           >
-            <span>About Me</span>
+            <span>About </span>
           </Link>
         </li>
         <li className="relative parent">

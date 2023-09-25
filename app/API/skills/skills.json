@@ -1,0 +1,48 @@
+{
+    "frontendSkills": [{
+            "skill": "HTML",
+            "experience": "Advanced"
+        },
+        {
+            "skill": "CSS",
+            "experience": "Intermediate"
+        },
+        {
+            "skill": "Javascript",
+            "experience": "Advanced"
+        },
+        {
+            "skill": "Typescript",
+            "experience": ""
+        },
+        {
+            "skill": "React",
+            "experience": "Intermediate"
+        },
+        {
+            "skill": "Next.js",
+            "experience": ""
+        },
+        {
+            "skill": "tailwind",
+            "experience": "Intermediate"
+        },
+        {
+            "skill": "daisyUi",
+            "experience": ""
+        }
+    ],
+    "backSkills": [{
+            "skill": "golang",
+            "experience": "Intermediate"
+        },
+        {
+            "skill": "rust",
+            "experience": ""
+        },
+        {
+            "skill": "MySQL",
+            "experience": "Intermediate"
+        }
+    ]
+}
