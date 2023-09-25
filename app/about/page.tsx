@@ -4,10 +4,10 @@ import Label from "./Label";
 
 export default function About() {
   return (
-    <div className="bg-secondary p-6">
-      <Label label="" value="Tools" />
+    <div className="bg-secondary p-6 flex flex-col gap-6">
+      <Label label="" value="Tools" icon="fa-solid fa-screwdriver-wrench" />
       <AboutSkill />
-      <Label label="" value="Projects"  />
+      <Label label="" value="Projects"  icon="fa-solid fa-parachute-box"  />
       <AboutProject/>
     </div>
   );

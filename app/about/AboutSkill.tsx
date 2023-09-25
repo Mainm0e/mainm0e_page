@@ -10,12 +10,14 @@ interface Skill {
 interface SkillData {
   frontendSkills: Skill[];
   backSkills: Skill[];
+  applications: Skill[];
 }
 
 export default function AboutSkill() {
   const [data, setData] = useState<SkillData>({
     frontendSkills: [],
     backSkills: [],
+    applications: [],
   });
   const [isLoading, setIsLoading] = useState(true); // Add loading state
 
@@ -38,12 +40,11 @@ export default function AboutSkill() {
   }, []);
 
   return (
-    <div className="max-w-7xl mx-auto bg-primary p-6 rounded-lg shadow-lg">
+    <div className="bg-primary p-6 rounded-lg shadow-lg">
       {isLoading ? ( // Check if data is loading
         // Display loading animation here
         <div className="flex flex-row items-center justify-center">
         <span className="loading loading-spinner loading-lg"></span>
-
         </div>
       ) : (
         <div className="flex flex-col md:flex-row">
@@ -60,8 +61,8 @@ export default function AboutSkill() {
               ))}
             </ul>
           </div>
-          {/* Backend Skills (Left Side) */}
-          <div className="md:w-1/2 md:pr-4 flex flex-col items-center max-sm:border-t-2 max-sm:pt-5">
+          {/* Backend Skills (midle Side) */}
+          <div className="md:w-1/2 md:pr-4 flex flex-col items-center md:border-r-2 max-sm:border-t-2 max-sm:pt-5">
             <h2 className="text-xl font-semibold text-gray-700 mb-4">
               Backend <i className="fa-solid fa-gears fa-beat fa-gl"></i>
             </h2>
@@ -73,6 +74,20 @@ export default function AboutSkill() {
               ))}
             </ul>
           </div>
+          {/* Applications Skills (left Side) */}
+          <div className="md:w-1/2 md:pr-4 flex flex-col items-center max-sm:border-t-2 max-sm:pt-5">
+            <h2 className="text-xl font-semibold text-gray-700 mb-4">
+            Applications <i className="fa-solid fa-wand-magic-sparkles fa-shake"></i>
+            </h2>
+            <ul className="list-none pl-6">
+              {data.applications.map((skill, index) => (
+                <li key={index} className="text-gray-600 mb-2">
+                  <i className={skill.icon}></i> {skill.skill}
+                </li>
+              ))}
+            </ul>
+          </div>
+
         </div>
       )}
     </div>

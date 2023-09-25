@@ -41,7 +41,7 @@ export default function AboutProject() {
     }, []);
 
   return (
-    <div className="max-w-7xl mx-auto bg-primary p-6 rounded-lg shadow-lg">
+    <div className="bg-primary p-6 rounded-lg shadow-lg">
     {isLoading ? ( // Check if data is loading
       // Display loading animation here
       <div className="flex flex-row items-center justify-center">
