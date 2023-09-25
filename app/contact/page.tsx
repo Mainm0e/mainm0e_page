@@ -21,9 +21,9 @@ export default function Contact() {
       {/* Right side */}
       <div className="w-1/2 flex items-center justify-center">
       <OnlyContact
-        name="John Doe"
-        email="john@example.com"
-        phone="123-456-7890"
+        name="Adithep T."
+        email="Tamwisai.Adithep@gmail.com"
+        phone="0413189619"
         imageUrl="./images/home.jpg"
       />
       </div>
