@@ -2,7 +2,7 @@ import Image from "next/image";
 /* portfolio fullstact developer */
 export default function Home() {
     return (
-      <main className="bg-secondary  flex items-center justify-center py-8 px-32">
+      <main className="bg-secondary flex items-center justify-center py-8 px-32">
       {/* Left side */}
       <div className=" bg-primary p-6 flex items-center justify-center rounded-lg shadow-lg">
       <div className="w-full md:w-1/2 text-center md:text-left px-8 md:px-16">
@@ -16,7 +16,7 @@ export default function Home() {
 
       {/* Right side */}
       <div className="w-1/2 flex items-center justify-center">
-        <Image src="/images/home.jpg" alt="welcome" width={500} height={500} className="rounded-full" />
+        <Image src="/images/home.jpg" alt="welcome" width={500} height={500} className="rounded-full shadow-2xl" />
       </div>
     </div>
     </main>
