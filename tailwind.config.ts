@@ -13,29 +13,41 @@ const config: Config = {
         "gradient-conic":
           "conic-gradient(from 180deg at 50% 50%, var(--tw-gradient-stops))",
       },
+      colors: {
+        /* primary,secondary 60%  */
+        /* accent, neutral 30%*/
+        /* base-100 10% */
+        "primary": "#FFFFFF",
+        "secondary": "#CECECE",
+        "accent": "#A6A6A8",
+        "neutral": "#272635",
+        "base-100": "0075F2",
+        
+      },
     },
   },
   daisyui: {
     themes: [
       {
         mytheme: {
-          primary: "#570df8",
-
-          secondary: "#f000b8",
-
-          accent: "#1dcdbc",
-
-          neutral: "#2b3440",
-
-          "base-100": "#ffffff",
-
-          info: "#3abff8",
-
-          success: "#36d399",
-
-          warning: "#fbbd23",
-
-          error: "#f87272",
+        
+"primary": "#fccf9c",
+        
+"secondary": "#2c9ba3",
+        
+"accent": "#bc5c20",
+        
+"neutral": "#1a1424",
+        
+"base-100": "#fcfcfd",
+        
+"info": "#59a4c9",
+        
+"success": "#18c3a4",
+        
+"warning": "#c56e11",
+        
+"error": "#fc2c6a",
         },
       },
     ],

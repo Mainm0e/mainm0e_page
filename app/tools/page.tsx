@@ -38,7 +38,7 @@ export default function Tools() {
  
    // Function to handle experience level input change
    const handleExperienceLevelChange = (
-     e: React.ChangeEvent<HTMLInputElement>,
+     e: React.ChangeEvent<HTMLSelectElement>,
      index: number
    ) => {
      const updatedExperienceLevels = [...experienceLevels];

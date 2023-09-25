@@ -1,48 +1,54 @@
 {
     "frontendSkills": [{
-            "skill": "HTML",
-            "experience": "Advanced"
+            "skill": "HTML5",
+            "experience": "Advanced",
+            "icon": "devicon-html5-plain-wordmark colored"
         },
         {
-            "skill": "CSS",
-            "experience": "Intermediate"
+            "skill": "CSS3",
+            "experience": "Intermediate",
+            "icon": "devicon-css3-plain-wordmark colored"
         },
         {
             "skill": "Javascript",
-            "experience": "Advanced"
+            "experience": "Advanced",
+            "icon": "devicon-javascript-plain colored"
         },
         {
             "skill": "Typescript",
-            "experience": ""
+            "experience": "",
+            "icon": "devicon-typescript-plain colored"
         },
         {
             "skill": "React",
-            "experience": "Intermediate"
+            "experience": "Intermediate",
+            "icon": "devicon-react-original colored"
         },
         {
             "skill": "Next.js",
-            "experience": ""
+            "experience": "",
+            "icon": "devicon-nextjs-original colored"
         },
         {
-            "skill": "tailwind",
-            "experience": "Intermediate"
-        },
-        {
-            "skill": "daisyUi",
-            "experience": ""
+            "skill": "Tailwind",
+            "experience": "Intermediate",
+            "icon": "devicon-tailwindcss-plain colored"
         }
     ],
     "backSkills": [{
-            "skill": "golang",
-            "experience": "Intermediate"
+            "skill": "Golang",
+            "experience": "Intermediate",
+            "icon": "devicon-go-original-wordmark colored"
         },
         {
-            "skill": "rust",
-            "experience": ""
+            "skill": "Rust",
+            "experience": "",
+            "icon": "devicon-rust-plain colored"
         },
         {
-            "skill": "MySQL",
-            "experience": "Intermediate"
+            "skill": "Sqlite",
+            "experience": "Intermediate",
+            "icon": "devicon-sqlite-plain colored"
         }
     ]
 }

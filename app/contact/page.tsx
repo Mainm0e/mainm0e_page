@@ -7,7 +7,8 @@ export default function Contact() {
 
   /* have right side and left side, right side for some text and right side for contact form */
   return (
-    <main className="bg-gray-100 min-h-screen flex items-center justify-center py-16 px-32">
+    <main className="bg-secondary  flex items-center justify-center py-16 px-32">
+       <div className=" bg-primary p-6 flex items-center justify-center rounded-lg shadow-lg">
       {/* Left side */}
       <div className="w-full md:w-1/2 text-center md:text-left px-8 md:px-16">
         <h1 className="text-4xl md:text-5xl font-extrabold text-gray-800">
@@ -26,6 +27,7 @@ export default function Contact() {
         phone="0413189619"
         imageUrl="./images/home.jpg"
       />
+      </div>
       </div>
     </main>
   );
