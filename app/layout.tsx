@@ -19,6 +19,7 @@ export default function RootLayout({
     <html lang="en" suppressHydrationWarning={true}>
       <head>
       <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/devicons/devicon@v2.15.1/devicon.min.css" />
+      <script src="https://kit.fontawesome.com/f3586bdbae.js" crossOrigin="anonymous"></script>
       </head>
       <body className={inter.className}>
       <Navbar/> {/* Pass the current path as a prop */}

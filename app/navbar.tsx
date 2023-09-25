@@ -15,7 +15,7 @@ function Navbar() {
   <div className="flex-none">
     <ul className="menu menu-horizontal px-1">
       <li><Link href={"/"}className="hover:bg-primary">Home</Link></li>
-      <li><Link href={"/about_me"}>About</Link></li>
+      <li><Link href={"/about"}>About</Link></li>
       <li><Link href={"/contact"}>contact</Link></li>
 
 
