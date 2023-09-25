@@ -24,7 +24,7 @@ export default function RootLayout({
       <Navbar/> {/* Pass the current path as a prop */}
         {children}
         <Footer />
-        </body>
+      </body>
     </html>
   )
 }
