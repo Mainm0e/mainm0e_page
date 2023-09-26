@@ -1,7 +1,10 @@
 "use client"
 import React, { useState } from "react";
 import { useEffect } from "react";
+<<<<<<< HEAD
 import Image from "next/image";
+=======
+>>>>>>> 86ff7b944db0c72aeefa98931dfb33233842d435
 
 interface Project {
     name: string;
@@ -51,8 +54,13 @@ export default function AboutProject() {
     ) : (
         <div className="flex flex-row flex-wrap justify-center gap-5">
         {data.web_applications.map((project, index) => (
+<<<<<<< HEAD
             <div className="card w-96 bg-neutral shadow-xl">
                 <figure >
+=======
+            <div className="card w-96 bg-base-100 shadow-xl">
+                <figure>
+>>>>>>> 86ff7b944db0c72aeefa98931dfb33233842d435
                 <img
                     src={project.image}
                     alt={project.name}

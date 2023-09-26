@@ -1,5 +1,6 @@
 "use client";
 import Link from "next/link";
+<<<<<<< HEAD
 import { useEffect, useState } from "react";
 import AOS from "aos";
 import "aos/dist/aos.css";
@@ -163,6 +164,28 @@ function Navbar() {
             </li>
 
             {/*  <li>
+=======
+import { use, useEffect ,useState} from "react";
+
+
+
+function Navbar() {
+
+  return (
+
+<nav className="navbar bg-primary md:px-40">
+  <div className="flex-1">
+    <span className="text-lg font-bold md:py-0 py-4">Mainm0e</span>
+  </div>
+  <div className="flex-none">
+    <ul className="menu menu-horizontal px-1">
+      <li><Link href={"/"}className="hover:bg-primary">Home</Link></li>
+      <li><Link href={"/about"}>About</Link></li>
+      <li><Link href={"/contact"}>contact</Link></li>
+
+
+     {/*  <li>
+>>>>>>> 86ff7b944db0c72aeefa98931dfb33233842d435
         <details>
           <summary>
             Parent
@@ -173,13 +196,23 @@ function Navbar() {
           </ul>
         </details>
       </li> */}
+<<<<<<< HEAD
           </ul>
         </div>
       </nav>
     )
     }
     </>
+=======
+    </ul>
+  </div>
+</nav>
+>>>>>>> 86ff7b944db0c72aeefa98931dfb33233842d435
   );
 }
 
 export default Navbar;
+<<<<<<< HEAD
+=======
+
+>>>>>>> 86ff7b944db0c72aeefa98931dfb33233842d435
