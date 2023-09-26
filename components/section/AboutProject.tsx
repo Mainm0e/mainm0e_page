@@ -41,12 +41,11 @@ export default function AboutProject() {
     }, []);
 
   return (
-    <div className="bg-primary p-6 rounded-lg shadow-lg">
+    <div className="bg-accent p-6 rounded-lg shadow-lg">
     {isLoading ? ( // Check if data is loading
       // Display loading animation here
       <div className="flex flex-row items-center justify-center">
       <span className="loading loading-spinner loading-lg"></span>
-
       </div>
     ) : (
         <div className="flex flex-row flex-wrap justify-center gap-5">

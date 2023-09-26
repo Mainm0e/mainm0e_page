@@ -8,7 +8,7 @@ export default function Hero() {
         backgroundImage: "url('/images/test_hero.png')",
       }}
     >
-      <div className="absolute inset-0 bg-black opacity-60"></div>
+      <div className="absolute inset-0 bg-black opacity-10"></div>
       <div className="container mx-auto text-center relative z-10">
         <h1 className="text-5xl font-bold text-white mb-4">
         Welcome to Mainm0e's

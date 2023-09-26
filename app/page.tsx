@@ -12,7 +12,7 @@ export default function Home() {
       </section>
 
       {/* Introduction section */}
-      <section id="introduction" className="pb-16">
+      <section id="introduction" className="pb-16 flex justify-center">
         <Introduction />
       </section>
 {/* //! relesed later

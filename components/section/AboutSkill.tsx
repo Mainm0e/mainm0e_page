@@ -40,7 +40,7 @@ export default function AboutSkill() {
   }, []);
 
   return (
-    <div className="bg-primary p-6 rounded-lg shadow-lg">
+    <div className="bg-accent p-6 rounded-lg shadow-lg">
       {isLoading ? ( // Check if data is loading
         // Display loading animation here
         <div className="flex flex-row items-center justify-center">
@@ -50,12 +50,12 @@ export default function AboutSkill() {
         <div className="flex flex-col md:flex-row">
           {/* Frontend Skills (Right Side) */}
           <div className="md:w-1/2 md:pr-4 flex flex-col items-center md:border-r-2">
-            <h2 className="text-xl font-semibold text-gray-700 mb-4">
+            <h2 className="text-xl font-semibold text-text-label mb-4">
               Frontend <i className="fa-solid fa-laptop-code fa-flip fa-gl"></i>
             </h2>
             <ul className="list-none pl-6">
               {data.frontendSkills.map((skill, index) => (
-                <li key={index} className="text-gray-600 mb-2">
+                <li key={index} className="text-text-neutral mb-2">
                   <i className={skill.icon}></i> {skill.skill}
                 </li>
               ))}
@@ -63,12 +63,12 @@ export default function AboutSkill() {
           </div>
           {/* Backend Skills (midle Side) */}
           <div className="md:w-1/2 md:pr-4 flex flex-col items-center md:border-r-2 max-sm:border-t-2 max-sm:pt-5">
-            <h2 className="text-xl font-semibold text-gray-700 mb-4">
+           <h2 className="text-xl font-semibold text-text-label mb-4">
               Backend <i className="fa-solid fa-gears fa-beat fa-gl"></i>
             </h2>
             <ul className="list-none pl-6">
               {data.backSkills.map((skill, index) => (
-                <li key={index} className="text-gray-600 mb-2">
+                <li key={index} className="text-text-neutral mb-2">
                   <i className={skill.icon}></i> {skill.skill}
                 </li>
               ))}
@@ -76,12 +76,12 @@ export default function AboutSkill() {
           </div>
           {/* Applications Skills (left Side) */}
           <div className="md:w-1/2 md:pr-4 flex flex-col items-center max-sm:border-t-2 max-sm:pt-5">
-            <h2 className="text-xl font-semibold text-gray-700 mb-4">
+           <h2 className="text-xl font-semibold text-text-label mb-4">
             Applications <i className="fa-solid fa-wand-magic-sparkles fa-shake"></i>
             </h2>
             <ul className="list-none pl-6">
               {data.applications.map((skill, index) => (
-                <li key={index} className="text-gray-600 mb-2">
+                <li key={index} className="text-text-neutral mb-2">
                   <i className={skill.icon}></i> {skill.skill}
                 </li>
               ))}
