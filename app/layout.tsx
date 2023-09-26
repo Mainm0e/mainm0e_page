@@ -4,7 +4,7 @@ import { Inter } from 'next/font/google'
 import Navbar from '../components/header/Navbar'
 import Footer from '../components/footer/Footer'
 const inter = Inter({ subsets: ['latin'] })
-import { Analytics } from '@vercel/analytics/react';
+
 
 
 export const metadata: Metadata = {
@@ -28,7 +28,6 @@ export default function RootLayout({
       <Navbar/> {/* Pass the current path as a prop */}
         </header>
         {children}
-        <Analytics/>
         <Footer />
       </body>
     </html>
