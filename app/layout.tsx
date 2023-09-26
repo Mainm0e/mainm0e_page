@@ -4,6 +4,7 @@ import { Inter } from 'next/font/google'
 import Navbar from './navbar'
 import Footer from './footer'
 const inter = Inter({ subsets: ['latin'] })
+import { Analytics } from '@vercel/analytics/react';
 
 export const metadata: Metadata = {
   title: 'Mainm0e',
@@ -24,6 +25,7 @@ export default function RootLayout({
       <body className={inter.className}>
       <Navbar/> {/* Pass the current path as a prop */}
         {children}
+        <Analytics/>
         <Footer />
       </body>
     </html>
