@@ -8,6 +8,8 @@ const config: Config = {
   ],
   theme: {
     extend: {
+      screens: {
+      },
       backgroundImage: {
         "gradient-radial": "radial-gradient(var(--tw-gradient-stops))",
         "gradient-conic":
@@ -17,11 +19,16 @@ const config: Config = {
         /* primary,secondary 60%  */
         /* accent, neutral 30%*/
         /* base-100 10% */
-        "primary": "#FFFFFF",
-        "secondary": "#CECECE",
-        "accent": "#A6A6A8",
-        "neutral": "#272635",
+        "primary": "#563A2C",
+        "secondary": "#DAB292",
+        "accent": "#AB9D7D",
+        "neutral": "#AA938C",
         "base-100": "0075F2",
+        // * text
+        "text-primary": "#FFF",
+        "text-secondary": "#000",
+        "text-label": "#000",
+        "text-neutral": "#563A2C",
         
       },
     },

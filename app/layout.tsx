@@ -1,8 +1,8 @@
 import './globals.css'
 import type { Metadata } from 'next'
 import { Inter } from 'next/font/google'
-import Navbar from './navbar'
-import Footer from './footer'
+import Navbar from '../components/header/Navbar'
+import Footer from '../components/footer/Footer'
 const inter = Inter({ subsets: ['latin'] })
 import { Analytics } from '@vercel/analytics/react';
 
@@ -23,7 +23,9 @@ export default function RootLayout({
       <script src="https://kit.fontawesome.com/f3586bdbae.js" crossOrigin="anonymous"></script>
       </head>
       <body className={inter.className}>
+        <header>
       <Navbar/> {/* Pass the current path as a prop */}
+        </header>
         {children}
         <Analytics/>
         <Footer />
