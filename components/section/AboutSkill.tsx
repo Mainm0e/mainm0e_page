@@ -49,7 +49,7 @@ export default function AboutSkill() {
       ) : (
         <div className="flex flex-col md:flex-row">
           {/* Frontend Skills (Right Side) */}
-          <div className="md:w-1/2 md:pr-4 flex flex-col items-center md:border-r-2">
+          <div className="md:w-1/2 md:pr-4 flex flex-col items-center md:border-r-2 border-text-neutral">
             <h2 className="text-xl font-semibold text-text-label mb-4">
               Frontend <i className="fa-solid fa-laptop-code fa-flip fa-gl"></i>
             </h2>
@@ -62,7 +62,7 @@ export default function AboutSkill() {
             </ul>
           </div>
           {/* Backend Skills (midle Side) */}
-          <div className="md:w-1/2 md:pr-4 flex flex-col items-center md:border-r-2 max-sm:border-t-2 max-sm:pt-5">
+          <div className="md:w-1/2 md:pr-4 flex flex-col items-center md:border-r-2 max-sm:border-t-2 max-sm:pt-5 border-text-neutral">
            <h2 className="text-xl font-semibold text-text-label mb-4">
               Backend <i className="fa-solid fa-gears fa-beat fa-gl"></i>
             </h2>
@@ -75,7 +75,7 @@ export default function AboutSkill() {
             </ul>
           </div>
           {/* Applications Skills (left Side) */}
-          <div className="md:w-1/2 md:pr-4 flex flex-col items-center max-sm:border-t-2 max-sm:pt-5">
+          <div className="md:w-1/2 md:pr-4 flex flex-col items-center max-sm:border-t-2 max-sm:pt-5 border-text-neutral">
            <h2 className="text-xl font-semibold text-text-label mb-4">
             Applications <i className="fa-solid fa-wand-magic-sparkles fa-shake"></i>
             </h2>

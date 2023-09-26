@@ -7,7 +7,7 @@ export default function Contact() {
 
   /* have right side and left side, right side for some text and right side for contact form */
   return (
-    <main className="bg-secondary  flex items-center justify-center py-16 px-32">
+    <main className="bg-secondary  flex items-center justify-center  px-32 pt-32">
       <section id="contact" className="flex flex-col md:flex-col gap-6 md:pb-16">
        <div className=" bg-accent p-6 flex items-center justify-center rounded-lg shadow-lg">
       {/* Left side */}

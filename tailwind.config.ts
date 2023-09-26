@@ -28,6 +28,7 @@ const config: Config = {
         "text-primary": "#FFF",
         "text-secondary": "#000",
         "text-label": "#000",
+        "text-hover": "#FFF",
         "text-neutral": "#563A2C",
         
       },

@@ -4,7 +4,7 @@
         "description": "test_project_description",
         "url": "http://test_project.com",
         "tools": ["html", "css", "js"],
-        "image": "test_project.png",
+        "image": "./images/test_my.png",
         "release_date": "2018-01-01",
         "status": "active"
     }, {
@@ -12,7 +12,7 @@
         "description": "test_project_description",
         "url": "http://test_project.com",
         "tools": ["html", "css", "js"],
-        "image": "test_project.png",
+        "image": "./images/test_my.png",
         "release_date": "2018-01-01",
         "status": "active"
     }, {
@@ -20,7 +20,7 @@
         "description": "test_project_description",
         "url": "http://test_project.com",
         "tools": ["html", "css", "js"],
-        "image": "test_project.png",
+        "image": "./images/test_my.png",
         "release_date": "2018-01-01",
         "status": "active"
     }]

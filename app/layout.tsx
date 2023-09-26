@@ -5,6 +5,7 @@ import Navbar from '../components/header/Navbar'
 import Footer from '../components/footer/Footer'
 const inter = Inter({ subsets: ['latin'] })
 
+
 export const metadata: Metadata = {
   title: 'Mainm0e',
   description: 'Mainm0e\'s personal website',
