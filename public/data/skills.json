@@ -50,5 +50,22 @@
             "experience": "Intermediate",
             "icon": "devicon-sqlite-plain colored"
         }
+    ],
+
+    "applications": [{
+            "skill": "Github",
+            "experience": "Advanced",
+            "icon": "devicon-github-original colored"
+        },
+        {
+            "skill": "vscode",
+            "experience": "",
+            "icon": "devicon-vscode-plain colored"
+        },
+        {
+            "skill": "docker",
+            "experience": "",
+            "icon": "devicon-docker-plain colored"
+        }
     ]
 }
