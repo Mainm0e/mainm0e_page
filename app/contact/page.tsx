@@ -1,5 +1,5 @@
 //import ContactForm from "./ContactForm"
-import OnlyContact from "./OnlyContact";
+import OnlyContact from "../../components/common/OnlyContact";
 // import assest
 
 
@@ -8,6 +8,7 @@ export default function Contact() {
   /* have right side and left side, right side for some text and right side for contact form */
   return (
     <main className="bg-secondary  flex items-center justify-center py-16 px-32">
+      <section id="contact" className="flex flex-col md:flex-col gap-6 md:pb-16">
        <div className=" bg-primary p-6 flex items-center justify-center rounded-lg shadow-lg">
       {/* Left side */}
       <div className="w-full md:w-1/2 text-center md:text-left px-8 md:px-16">
@@ -29,6 +30,7 @@ export default function Contact() {
       />
       </div>
       </div>
+      </section>
     </main>
   );
 }
