@@ -44,22 +44,33 @@ export default function Services() {
             <span className="loading loading-spinner loading-lg"></span>
           </div>
         ) : (
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
-            {data.my_services["web applications"].map((service, index) => (
-              <div className="bg-accent p-4 border-2 border-primary shadow-md" key={index}>
-                {/* Icon */}
-                <div className="text-3xl text-text-label mb-4">
-                  <i className={service.Icon}></i>
+          <>
+            <h1 className="text-3xl font-semibold mb-8">Services</h1>
+            <div className="bg-accent flex flex-row w-full items-center justify-center border-4 border-primary mb-6">
+              <span className="text-3xl">Web site</span>
+            </div>
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
+              {data.my_services["web applications"].map((service, index) => (
+                <div
+                  className="bg-accent p-4 border-2 border-primary shadow-md"
+                  key={index}
+                >
+                  {/* Icon */}
+                  <div className="text-3xl text-text-label mb-4">
+                    <i className={service.Icon}></i>
+                  </div>
+
+                  {/* Title */}
+                  <h2 className="text-xl font-semibold mb-2">
+                    {service.Title}
+                  </h2>
+
+                  {/* Description */}
+                  <p className="text-gray-600">{service.Description}</p>
                 </div>
-
-                {/* Title */}
-                <h2 className="text-xl font-semibold mb-2">{service.Title}</h2>
-
-                {/* Description */}
-                <p className="text-gray-600">{service.Description}</p>
-              </div>
-            ))}
-          </div>
+              ))}
+            </div>
+          </>
         )}
       </div>
     </>
