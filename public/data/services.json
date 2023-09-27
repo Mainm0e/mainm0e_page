@@ -1,0 +1,22 @@
+{
+    "my_services": {
+        "web applications": [{
+                "Title": "Support & Maintenance",
+                "Description": "Making Front-End",
+                "Icon": "fa-solid fa-screwdriver-wrench fa-bounce"
+            },
+            {
+                "Title": "Development",
+                "Description": "Making Front-End",
+                "Icon": "fa-solid fa-code fa-beat"
+            },
+            {
+                "Title": "Design",
+                "Description": "Making Front-End",
+                "Icon": "fa-solid fa-paintbrush fa-flip"
+
+            }
+
+        ]
+    }
+}

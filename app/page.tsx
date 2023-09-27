@@ -1,6 +1,7 @@
 import { features } from "process";
 import Hero from "../components/section/Hero";
 import Introduction from "../components/section/Introduction";
+import Services from "../components/section/Services";
 /* portfolio fullstact developer */
 export default function Home() {
   return (
@@ -15,9 +16,11 @@ export default function Home() {
       <section id="introduction" className="pb-16 flex justify-center">
         <Introduction />
       </section>
+      <section id="services" className="pb-16 flex justify-center">
+        <Services />
+      </section>
 {/* //! relesed later
       <section id="featured_projects"></section>
-      <section id="services"></section>
      */}
     </main>
   );

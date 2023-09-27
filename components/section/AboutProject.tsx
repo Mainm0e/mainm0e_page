@@ -51,7 +51,7 @@ export default function AboutProject() {
     ) : (
         <div className="flex flex-row flex-wrap justify-center gap-5">
         {data.web_applications.map((project, index) => (
-            <div className="card w-96 bg-neutral shadow-xl">
+            <div className="card w-96 bg-neutral shadow-xl" key={index}>
                 <figure >
                 <img
                     src={project.image}

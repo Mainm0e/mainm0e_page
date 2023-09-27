@@ -43,24 +43,86 @@ function Navbar() {
   };
 
   const styleHandler = () => {
+    console.log("scrollPosition", path)
    if (path === "/") {
       if (scrollPosition < 500) {
-        return true ;
-      } else {
         return false ;
+      } else {
+        return true;
       }
     } else {
-      return false;
+      return true;
     }
   };
 
   return (
     <>
-    {(path === "/") ? (
+    {(path !== "/") ? (
+
+<nav
+className="navbar bg-primary md:px-40 fixed top-0 z-20 left-0 right-0"
+style={{
+  backgroundColor: `rgba(86,58,44,1)`,
+  transition: "background-color 0.5s ease",
+}}
+data-aos="fade-down"
+data-aos-duration="800"
+data-aos-offset="0"
+>
+<div className="flex-1">
+  <span className="text-lg text-text-primary font-bold md:py-0 py-4">
+    Mainm0e
+  </span>
+</div>
+<div className="flex-none">
+  <ul className="menu menu-horizontal px-1">
+    <li>
+      <Link
+        href={"/"}
+        className="text-text-primary rounded-none hover:bg-primary hover:text-text-hover"
+        onClick={() => stateHandler('/')}
+      >
+        Home
+      </Link>
+    </li>
+    <li>
+      <Link
+        href={"/about"}
+        className="text-text-primary rounded-none hover:bg-primary hover:text-text-hover"
+        onClick={() => stateHandler('/about')}
+      >
+        About
+      </Link>
+    </li>
+    <li>
+      <Link
+        href={"/contact"}
+        className="text-text-primary rounded-none hover:bg-primary hover:text-text-hover"
+        onClick={() => stateHandler('/contact')}
+      >
+        contact
+      </Link>
+    </li>
+
+    {/*  <li>
+<details>
+  <summary>
+    Parent
+  </summary>
+  <ul className="p-2 bg-base-100">
+    <li><a>Link 1</a></li>
+    <li><a>Link 2</a></li>
+  </ul>
+</details>
+</li> */}
+  </ul>
+</div>
+</nav>
+    ): (
       <nav
       className="navbar bg-primary md:px-40 fixed top-0 z-20 left-0 right-0"
       style={{
-        backgroundColor: `rgba(86,58,44, ${styleHandler() ? 0.1 : 1})`,
+        backgroundColor: `rgba(86,58,44, ${styleHandler() ? 1 : 0.1})`,
         transition: "background-color 0.5s ease",
       }}
       data-aos="fade-down"
@@ -116,66 +178,6 @@ function Navbar() {
         </ul>
       </div>
     </nav>
-    ): (
-      <nav
-        className="navbar bg-primary md:px-40 fixed top-0 z-20 left-0 right-0"
-        style={{
-          backgroundColor: `rgba(86,58,44,1)`,
-          transition: "background-color 0.5s ease",
-        }}
-        data-aos="fade-down"
-        data-aos-duration="800"
-        data-aos-offset="0"
-      >
-        <div className="flex-1">
-          <span className="text-lg text-text-primary font-bold md:py-0 py-4">
-            Mainm0e
-          </span>
-        </div>
-        <div className="flex-none">
-          <ul className="menu menu-horizontal px-1">
-            <li>
-              <Link
-                href={"/"}
-                className="text-text-primary rounded-none hover:bg-primary hover:text-text-hover"
-                onClick={() => stateHandler('/')}
-              >
-                Home
-              </Link>
-            </li>
-            <li>
-              <Link
-                href={"/about"}
-                className="text-text-primary rounded-none hover:bg-primary hover:text-text-hover"
-                onClick={() => stateHandler('/about')}
-              >
-                About
-              </Link>
-            </li>
-            <li>
-              <Link
-                href={"/contact"}
-                className="text-text-primary rounded-none hover:bg-primary hover:text-text-hover"
-                onClick={() => stateHandler('/contact')}
-              >
-                contact
-              </Link>
-            </li>
-
-            {/*  <li>
-        <details>
-          <summary>
-            Parent
-          </summary>
-          <ul className="p-2 bg-base-100">
-            <li><a>Link 1</a></li>
-            <li><a>Link 2</a></li>
-          </ul>
-        </details>
-      </li> */}
-          </ul>
-        </div>
-      </nav>
     )
     }
     </>
