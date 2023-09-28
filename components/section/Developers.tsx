@@ -1,10 +1,10 @@
 
-import OnlyContact from "../../components/common/OnlyContact";
-export default function Contact() {
+import OnlyContact from "../common/OnlyContact";
+export default function Developers() {
     return (
         <>
-        <div className="container">
-        <h1 className="text-3xl font-semibold mb-8">Contact</h1>
+        <div className="container pt-16 mx-auto">
+        <h1 className="text-3xl font-semibold mb-8">Our developers</h1>
         <OnlyContact
         name="Adithep Tamwisai"
         email="Tamwisai.Adithep@gmail.com"
@@ -12,7 +12,6 @@ export default function Contact() {
         imageUrl="./images/home.jpg"
         /> 
         </div>
-        
         </>
     )
 }

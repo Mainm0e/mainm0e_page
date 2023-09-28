@@ -1,8 +1,6 @@
 "use client";
 import Link from "next/link";
 import { useEffect, useState } from "react";
-import AOS from "aos";
-import "aos/dist/aos.css";
 
 function Navbar() {
   let window = globalThis.window;
@@ -23,10 +21,6 @@ function Navbar() {
       const currentPosition = window.scrollY;
       setScrollPosition(currentPosition);
     };
-    AOS.init({
-      duration: 800, // Animation duration in milliseconds
-      offset: 100, // Offset (in pixels) from the top of the viewport to trigger animations
-    });
 
     // Add the scroll event listener when the component mounts
     window.addEventListener("scroll", handleScroll);
@@ -65,9 +59,6 @@ style={{
   backgroundColor: `rgba(86,58,44,1)`,
   transition: "background-color 0.5s ease",
 }}
-data-aos="fade-down"
-data-aos-duration="800"
-data-aos-offset="0"
 >
 <div className="flex-1">
   <span className="text-lg text-text-primary font-bold md:py-0 py-4">
@@ -87,34 +78,40 @@ data-aos-offset="0"
     </li>
     <li>
       <Link
-        href={"/about"}
+        href={"/#introduction"}
         className="text-text-primary rounded-none hover:bg-primary hover:text-text-hover"
-        onClick={() => stateHandler('/about')}
+        onClick={() => stateHandler('/#introduction')}
       >
-        About
+        Introduction
       </Link>
     </li>
     <li>
       <Link
-        href={"/contact"}
+        href={"/#services"}
         className="text-text-primary rounded-none hover:bg-primary hover:text-text-hover"
-        onClick={() => stateHandler('/contact')}
+        onClick={() => stateHandler('/#services')}
       >
-        contact
+        Services
       </Link>
     </li>
-
-    {/*  <li>
-<details>
-  <summary>
-    Parent
-  </summary>
-  <ul className="p-2 bg-base-100">
-    <li><a>Link 1</a></li>
-    <li><a>Link 2</a></li>
-  </ul>
-</details>
-</li> */}
+    <li>
+      <Link
+        href={"/#contact"}
+        className="text-text-primary rounded-none hover:bg-primary hover:text-text-hover"
+        onClick={() => stateHandler('/#contact')}
+      >
+        Developers
+      </Link>
+    </li>
+    <li>
+      <Link
+        href={"/#contact_form"}
+        className="text-text-primary rounded-none hover:bg-primary hover:text-text-hover"
+        onClick={() => stateHandler('/#contact_form')}
+      >
+        Contact
+      </Link>
+    </li>
   </ul>
 </div>
 </nav>
@@ -125,9 +122,6 @@ data-aos-offset="0"
         backgroundColor: `rgba(86,58,44, ${styleHandler() ? 1 : 0.1})`,
         transition: "background-color 0.5s ease",
       }}
-      data-aos="fade-down"
-      data-aos-duration="800"
-      data-aos-offset="0"
     >
       <div className="flex-1">
         <span className="text-lg text-text-primary font-bold md:py-0 py-4">
@@ -136,45 +130,51 @@ data-aos-offset="0"
       </div>
       <div className="flex-none">
         <ul className="menu menu-horizontal px-1">
-          <li>
-            <Link
-              href={"/"}
-              className="text-text-primary rounded-none hover:bg-primary hover:text-text-hover"
-              onClick={() => stateHandler('/')}
-            >
-              Home
-            </Link>
-          </li>
-          <li>
-            <Link
-              href={"/about"}
-              className="text-text-primary rounded-none hover:bg-primary hover:text-text-hover"
-              onClick={() => stateHandler('/about')}
-            >
-              About
-            </Link>
-          </li>
-          <li>
-            <Link
-              href={"/contact"}
-              className="text-text-primary rounded-none hover:bg-primary hover:text-text-hover"
-              onClick={() => stateHandler('/contact')}
-            >
-              contact
-            </Link>
-          </li>
-
-          {/*  <li>
-      <details>
-        <summary>
-          Parent
-        </summary>
-        <ul className="p-2 bg-base-100">
-          <li><a>Link 1</a></li>
-          <li><a>Link 2</a></li>
-        </ul>
-      </details>
-    </li> */}
+        <li>
+      <Link
+        href={"/"}
+        className="text-text-primary rounded-none hover:bg-primary hover:text-text-hover"
+        onClick={() => stateHandler('/')}
+      >
+        Home
+      </Link>
+    </li>
+    <li>
+      <Link
+        href={"/#introduction"}
+        className="text-text-primary rounded-none hover:bg-primary hover:text-text-hover"
+        onClick={() => stateHandler('/#introduction')}
+      >
+        Introduction
+      </Link>
+    </li>
+    <li>
+      <Link
+        href={"/#services"}
+        className="text-text-primary rounded-none hover:bg-primary hover:text-text-hover"
+        onClick={() => stateHandler('/#services')}
+      >
+        Services
+      </Link>
+    </li>
+    <li>
+      <Link
+        href={"/#contact"}
+        className="text-text-primary rounded-none hover:bg-primary hover:text-text-hover"
+        onClick={() => stateHandler('/#contact')}
+      >
+        Developers
+      </Link>
+    </li>
+    <li>
+      <Link
+        href={"/#contact_form"}
+        className="text-text-primary rounded-none hover:bg-primary hover:text-text-hover"
+        onClick={() => stateHandler('/#contact_form')}
+      >
+        Contact
+      </Link>
+    </li>
         </ul>
       </div>
     </nav>

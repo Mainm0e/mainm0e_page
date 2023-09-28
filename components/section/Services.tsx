@@ -1,5 +1,7 @@
 "use client";
 import React, { useEffect, useState } from "react";
+import AOS from 'aos';
+import 'aos/dist/aos.css'; // You can also use <link> for styles
 
 interface info {
   Title: string;
@@ -34,11 +36,14 @@ export default function Services() {
       .catch((error) => {
         console.error("Error loading JSON data:", error);
       });
+      AOS.init({
+        duration: 1000, // Animation duration in milliseconds
+      });
   }, []);
 
   return (
     <>
-      <div className="container">
+      <div className="container pt-16">
         {isLoading ? (
           <div className="flex flex-row items-center justify-center">
             <span className="loading loading-spinner loading-lg"></span>
@@ -54,6 +59,10 @@ export default function Services() {
                 <div
                   className="bg-accent p-4 border-2 border-primary shadow-md"
                   key={index}
+                  data-aos="flip-right"
+                  data-duration="2000"
+                  data-aos-delay="50"
+                  data-aos-offset="100"
                 >
                   {/* Icon */}
                   <div className="text-3xl text-text-label mb-4">

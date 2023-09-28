@@ -1,11 +1,27 @@
+import React, { useEffect } from "react";
 import Image from "next/image";
+import AOS from 'aos';
+import 'aos/dist/aos.css'; // You can also use <link> for styles
+
 
 export default function Introduction() {
   // 30% image 60% text 10& for margin or padding
   // left side image right side text
+  useEffect(() => {
+    // Initialize AOS
+    AOS.init({
+      duration: 1000, // Animation duration in milliseconds
+    });
+  }, []);
+
   return (
-    <div className="container">
-      <div className="bg-accent flex md:flex-row flex-col  border-4 border-primary shadow-lg justify-center">
+    <div className="container pt-16">
+      <div className="bg-accent flex md:flex-row flex-col  border-4 border-primary shadow-lg justify-center"
+        data-aos="fade-down"
+        data-duration="2000"
+        data-aos-offset="200"
+        data-aos-delay="50"
+        >
         <div className="avatar">
           <div className="md:w-96 max-sm:px-12 max-sm:py-6">
             <img className="" src="./images/home.jpg" alt="Mainm0e" />
