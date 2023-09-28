@@ -14,7 +14,7 @@ export default function Hero() {
         Welcome to Mainm0e's
         </h1>
         <p className="text-xl text-white mb-8">
-        Web Development Journey
+         Development Journey
         </p>
       </div>
     </div>

@@ -13,7 +13,6 @@ export default function Home() {
       <section id="hero" className="">
         <Hero />
       </section>
-
       {/* Introduction section */}
       <section id="introduction" className="py-8 flex justify-center">
         <Introduction />

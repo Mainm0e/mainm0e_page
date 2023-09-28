@@ -1,8 +1,7 @@
 import React, { useEffect } from "react";
 import Image from "next/image";
-import AOS from 'aos';
-import 'aos/dist/aos.css'; // You can also use <link> for styles
-
+import AOS from "aos";
+import "aos/dist/aos.css"; // You can also use <link> for styles
 
 export default function Introduction() {
   // 30% image 60% text 10& for margin or padding
@@ -16,12 +15,13 @@ export default function Introduction() {
 
   return (
     <div className="container pt-16">
-      <div className="bg-accent flex md:flex-row flex-col  border-4 border-primary shadow-lg justify-center"
+      <div
+        className="bg-accent flex md:flex-row flex-col  border-4 border-primary shadow-lg justify-center"
         data-aos="fade-down"
         data-duration="2000"
         data-aos-offset="200"
         data-aos-delay="50"
-        >
+      >
         <div className="avatar">
           <div className="md:w-96 max-sm:px-12 max-sm:py-6">
             <img className="" src="./images/home.jpg" alt="Mainm0e" />
@@ -30,18 +30,24 @@ export default function Introduction() {
         <div className="md:pl-16 flex justify-center  md:border-l-4 max-sm:border-t-4 border-primary shadow-lg">
           <div className="md:px-8 md:py-16">
             <h1 className="text-3xl md:text-5xl leading-relaxed md:leading-snug font-bold text-text-label text-center md:text-left">
-              Hi, I'm Adi
+              We are Mainm0e
             </h1>
             <p className="text-base md:text-2xl leading-relaxed md:leading-snug mt-4 text-text-neutral text-center md:text-left">
-              I'm a fullstack developer with a passion for building beautiful
-              and functional user experiences.
+              We're Mainm0e, a group of passionate developers
+              dedicated to creating user-friendly and functional digital
+              experiences. Our goal is to turn ideas into practical solutions,
+              making technology work for you. Join us as we build a better
+              digital world, one project at a time.
             </p>
-            <div className="flex justify-center md:justify-start mt-6">
-             
-            </div>
+            <div className="flex justify-center md:justify-start mt-6"></div>
           </div>
         </div>
       </div>
     </div>
   );
+}
+
+{
+  /*    I'm a fullstack developer with a passion for building beautiful
+              and functional user experiences. */
 }

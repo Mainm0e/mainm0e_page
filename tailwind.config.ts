@@ -30,6 +30,9 @@ const config: Config = {
         "text-label": "#000",
         "text-hover": "#FFF",
         "text-neutral": "#563A2C",
+        // * btn
+        "btn-primary": "#563A2C",
+        "btn-hover" : "#c5b69c",
         
       },
     },

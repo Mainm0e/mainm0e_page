@@ -1,105 +1,152 @@
-'use client'
-import React, { useState } from 'react';
+"use client";
+import React, { useState } from "react";
+import { useForm, Controller } from "react-hook-form";
+import toast, { Toaster } from "react-hot-toast";
+import Image from "next/image";
 // make this component to client side render
 
+interface FormData {
+  firstName: string;
+  lastName: string;
+  message: string;
+}
 
 export default function ContactForm() {
-      // Define state variables to hold form values
-  const [firstName, setFirstName] = useState<string>('');
-  const [lastName, setLastName] = useState<string>('');
-  const [message, setMessage] = useState<string>('');
+  const { handleSubmit, control } = useForm<FormData>();
 
-  // Function to handle form submission
-  const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
-    e.preventDefault();
+  const onSubmit = (data: FormData) => {
+    console.log(data);
+    toast.custom((t) => (
+      <div
+        className={`${
+          t.visible ? "animate-enter" : "animate-leave"
+        } max-w-md w-full bg-accent shadow-lg  pointer-events-auto flex ring-1 ring-black ring-opacity-5 border-2 border-primary`}
+      >
+        <div className="flex-1 w-0 p-4">
+          <div className="flex items-start">
+            <div className="flex-shrink-0 pt-0.5">
+              <img
+                className="h-10 w-10 rounded-full border-2 border-primary"
+                src="./images/home.jpg"
+                alt=""
+              />
+            </div>
+            <div className="ml-3 flex-1">
+              <p className="text-sm font-medium text-text-label">
+                Adithep Tamwisai
+              </p>
+              <p className="mt-1 text-sm text-text-neutral">
+                Sorry, this feature is not available yet. Please contact me via
+                email or social media.
+              </p>
+            </div>
+          </div>
+        </div>
+        <div className="flex border-l-2 border-primary">
+          <button
+            onClick={() => toast.dismiss(t.id)}
+            className="w-full border border-transparent rounded-none p-4 flex items-center justify-center text-sm font-medium bg-btn-primary hover:bg-btn-hover text-text-hover focus:outline-none"
+          >
+            Close
+          </button>
+        </div>
+      </div>
+    ));
 
-    // Here, you can save the form values or perform other actions
-    // For this example, we'll just log the form values
-    console.log('First Name:', firstName);
-    console.log('Last Name:', lastName);
-    console.log('Message:', message);
+    // Handle form submission here
   };
 
-
-    return (
-        <form className="w-full max-w-lg" onSubmit={handleSubmit}>
-          <div className="flex flex-wrap -mx-3 mb-6">
-            <div className="w-full px-3">
-              <label
-                className="block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2"
-                htmlFor="grid-first-name"
-              >
-                First Name
-              </label>
+  return (
+    <form className="w-full max-w-lg" onSubmit={handleSubmit(onSubmit)}>
+      <div className="flex flex-wrap -mx-3 mb-6">
+        <div className="w-full px-3">
+          <label
+            className="block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2"
+            htmlFor="firstName"
+          >
+            First Name
+          </label>
+          <Controller
+            name="firstName"
+            control={control}
+            defaultValue=""
+            render={({ field }) => (
               <input
-                className="appearance-none block w-full bg-gray-200 text-gray-700 border border-gray-200 rounded py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white focus:border-blue-500"
-                id="grid-first-name"
-                type="text"
+                {...field}
+                className="appearance-none block w-full bg-gray-200 text-gray-700 border border-gray-200 rounded py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white focus:border-primary"
                 placeholder="Jane"
-                value={firstName}
-                onChange={(e) => setFirstName(e.target.value)}
-               
               />
-              <p className="text-gray-600 text-xs italic">
-                Please fill out this field.
-              </p>
-            </div>
-          </div>
-          <div className="flex flex-wrap -mx-3 mb-6">
-            <div className="w-full px-3">
-              <label
-                className="block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2"
-                htmlFor="grid-last-name"
-              >
-                Last Name
-              </label>
+            )}
+          />
+        </div>
+      </div>
+      <div className="flex flex-wrap -mx-3 mb-6">
+        <div className="w-full px-3">
+          <label
+            className="block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2"
+            htmlFor="lastName"
+          >
+            Last Name
+          </label>
+          <Controller
+            name="lastName"
+            control={control}
+            defaultValue=""
+            render={({ field }) => (
               <input
-                className="appearance-none block w-full bg-gray-200 text-gray-700 border border-gray-200 rounded py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white focus:border-blue-500"
-                id="grid-last-name"
-                type="text"
+                {...field}
+                className="appearance-none block w-full bg-gray-200 text-gray-700 border border-gray-200 rounded py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white focus:border-primary"
                 placeholder="Doe"
-                value={lastName}
-                onChange={(e) => setLastName(e.target.value)}
               />
-              <p className="text-gray-600 text-xs italic">
-                Please fill out this field.
-              </p>
-            </div>
-          </div>
-          {/* some text area */}
-          <div className="flex flex-wrap -mx-3 mb-6">
-            <div className="w-full px-3">
-              <label
-                className="block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2"
-                htmlFor="grid-password"
-              >
-                Message
-              </label>
+            )}
+          />
+        </div>
+      </div>
+      <div className="flex flex-wrap -mx-3 mb-6">
+        <div className="w-full px-3">
+          <label
+            className="block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2"
+            htmlFor="message"
+          >
+            Message
+          </label>
+          <Controller
+            name="message"
+            control={control}
+            defaultValue=""
+            render={({ field }) => (
               <textarea
-                className="appearance-none block w-full bg-gray-200 text-gray-700 border border-gray-200 rounded py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white focus:border-blue-500 h-48 resize-none"
-                id="grid-password"
+                {...field}
+                className="appearance-none block w-full bg-gray-200 text-gray-700 border border-gray-200 rounded py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white focus:border-primary h-48 resize-none"
                 placeholder="Your message"
-                value={message}
-                onChange={(e) => setMessage(e.target.value)}
-                
-              ></textarea>
-              <p className="text-gray-600 text-xs italic">
-                Please fill out this field.
-              </p>
-            </div>
-          </div>
-          {/* submit button */}
-          <div className="md:flex md:items-center">
-          <div className="md:w-1/3">
-            <button
-              className="shadow bg-blue-500 hover:bg-blue-400 focus:shadow-outline focus:outline-none text-white font-bold py-2 px-4 rounded"
-              type="submit"
-            >
-              Send
-            </button>
-          </div>
-          <div className="md:w-2/3"></div>
-          </div>
-        </form>
-    );
+              />
+            )}
+          />
+        </div>
+      </div>
+      <div className="md:flex md:items-center">
+        <div className="md:w-1/3">
+          <button
+            className="shadow bg-btn-primary hover:bg-btn-hover focus:shadow-outline focus:outline-none text-white font-bold py-2 px-4 rounded"
+            type="submit"
+          >
+            Send
+          </button>
+        </div>
+        <div className="md:w-2/3"></div>
+      </div>
+    </form>
+  );
 }
+
+/* 
+//!! very nice touster for contactform when submit i will use this later
+toast.promise(
+  saveSettings(settings),
+   {
+     loading: 'Saving...',
+     success: <b>Settings saved!</b>,
+     error: <b>Could not save.</b>,
+   }
+ );
+ */
