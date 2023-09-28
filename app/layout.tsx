@@ -29,7 +29,10 @@ export default function RootLayout({
       <Navbar/> {/* Pass the current path as a prop */}
         </header>
         {children}
-        <Toaster />
+        <Toaster 
+        position="top-right"
+        reverseOrder={false}
+        />
         <Analytics />
         <Footer />
       </body>
