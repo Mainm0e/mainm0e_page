@@ -47,7 +47,7 @@ export default function Services() {
           <>
             <h1 className="text-3xl font-semibold mb-8">Services</h1>
             <div className="bg-accent flex flex-row w-full items-center justify-center border-4 border-primary mb-6">
-              <span className="text-3xl">Web site</span>
+              <span className="text-3xl py-4">Web applications</span>
             </div>
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
               {data.my_services["web applications"].map((service, index) => (
