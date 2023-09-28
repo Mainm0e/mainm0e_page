@@ -32,7 +32,7 @@ export default function AboutSkill() {
         /* add 1s delay */
         setTimeout(() => {
         setIsLoading(false);
-        }, 1000);
+        }, 500);
       })
       .catch((error) => {
         console.error("Error loading JSON data:", error);

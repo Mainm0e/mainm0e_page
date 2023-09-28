@@ -2,6 +2,7 @@ import { features } from "process";
 import Hero from "../components/section/Hero";
 import Introduction from "../components/section/Introduction";
 import Services from "../components/section/Services";
+import Contact from "../components/section/Contact";
 /* portfolio fullstact developer */
 export default function Home() {
   return (
@@ -22,6 +23,9 @@ export default function Home() {
 {/* //! relesed later
       <section id="featured_projects"></section>
      */}
+      <section id="contact" className="pb-16 flex justify-center">
+        <Contact />
+      </section>
     </main>
   );
 }

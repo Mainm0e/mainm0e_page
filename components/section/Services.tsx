@@ -29,7 +29,7 @@ export default function Services() {
         setData(jsonData);
         setTimeout(() => {
           setIsLoading(false);
-        }, 1000);
+        }, 500);
       })
       .catch((error) => {
         console.error("Error loading JSON data:", error);
