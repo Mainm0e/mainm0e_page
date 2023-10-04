@@ -20,6 +20,8 @@ const config: Config = {
         /* accent, neutral 30%*/
         /* base-100 10% */
         "primary": "#563A2C",
+        /* opacity bg */
+        "primary-60": "#563A2C0",
         "secondary": "#DAB292",
         "accent": "#AB9D7D",
         "neutral": "#AA938C",
