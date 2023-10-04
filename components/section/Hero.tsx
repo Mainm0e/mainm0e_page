@@ -8,7 +8,6 @@ export default function Hero() {
         backgroundImage: "url('/images/tausta_flamingo.jpg')",
       }} */
     >
-      <div className="absolute inset-0 bg-black opacity-10"></div>
       <div className="container mx-auto text-center relative z-10">
         <h1 className="text-5xl font-bold text-white mb-4">
         Welcome to Mainm0e's
@@ -17,6 +16,20 @@ export default function Hero() {
          Development Journey
         </p>
       </div>
+      <div className="area" >
+            <ul className="circles">
+                    <li></li>
+                    <li></li>
+                    <li></li>
+                    <li></li>
+                    <li></li>
+                    <li></li>
+                    <li></li>
+                    <li></li>
+                    <li></li>
+                    <li></li>
+            </ul>
+    </div >
     </div>
   );;
 }

@@ -23,7 +23,7 @@ const config: Config = {
         /* opacity bg */
         "primary-60": "#7C808F0",
         "secondary": "#F1F1F4",
-        "accent": "#82A1C1",
+        "accent": "#F1F1F4",
         "neutral": "#252C4A",
         "base-100": "F1F1F4",
         // * text
