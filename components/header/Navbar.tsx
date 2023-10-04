@@ -10,7 +10,7 @@ function getNavStyle(scrollPosition: number): string {
 
 function Navbar() {
   let window = globalThis.window;
-  let defaultscrollPosition = window.scrollY;
+  let defaultscrollPosition = 0;
   let defaultpath = "/";
   if (typeof window !== "undefined") {
     defaultscrollPosition = window.scrollY;
@@ -18,6 +18,7 @@ function Navbar() {
   }
   const [scrollPosition, setScrollPosition] = useState(defaultscrollPosition);
   const [path, setPath] = useState(defaultpath);
+  let navStyle = getNavStyle(scrollPosition);
 
   useEffect(() => {
     const handleScroll = () => {
@@ -25,6 +26,7 @@ function Navbar() {
       setPath(window.location.pathname);
       const currentPosition = window.scrollY;
       setScrollPosition(currentPosition);
+      navStyle = getNavStyle(scrollPosition)
     };
 
     // Add the scroll event listener when the component mounts
@@ -40,7 +42,7 @@ function Navbar() {
     defaultpath = path;
     setPath(path);
   };
-  const navStyle = getNavStyle(scrollPosition);
+  
 
   return (
     <>
