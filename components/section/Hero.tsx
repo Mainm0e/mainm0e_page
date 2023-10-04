@@ -3,10 +3,10 @@ import Image from "next/image";
 export default function Hero() {
   return (
     <div
-      className="hero min-h-screen bg-cover bg-center relative flex items-center"
-      style={{
+      className="hero min-h-screen bg-cover bg-center relative flex items-center bg-primary"
+      /* style={{
         backgroundImage: "url('/images/tausta_flamingo.jpg')",
-      }}
+      }} */
     >
       <div className="absolute inset-0 bg-black opacity-10"></div>
       <div className="container mx-auto text-center relative z-10">

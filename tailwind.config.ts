@@ -19,13 +19,13 @@ const config: Config = {
         /* primary,secondary 60%  */
         /* accent, neutral 30%*/
         /* base-100 10% */
-        "primary": "#563A2C",
+        "primary": "#7C808F",
         /* opacity bg */
-        "primary-60": "#563A2C0",
-        "secondary": "#DAB292",
-        "accent": "#AB9D7D",
-        "neutral": "#AA938C",
-        "base-100": "0075F2",
+        "primary-60": "#7C808F0",
+        "secondary": "#F1F1F4",
+        "accent": "#82A1C1",
+        "neutral": "#252C4A",
+        "base-100": "F1F1F4",
         // * text
         "text-primary": "#FFF",
         "text-secondary": "#000",
