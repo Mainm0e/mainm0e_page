@@ -1,0 +1,78 @@
+{
+    "template1": {
+        "image": "./images/test_my.png",
+        "description": "A clean and modern CV template suitable for professionals in any industry.",
+        "usage": "This template is suitable for professionals in any industry who want to showcase their skills and experience in a clean and modern way.",
+        "required_fields": [{
+                "name": "name",
+                "label": "Name"
+            },
+            {
+                "name": "address",
+                "label": "Address"
+            },
+            {
+                "name": "phone",
+                "label": "Phone"
+            },
+            {
+                "name": "email",
+                "label": "Email"
+            },
+            {
+                "name": "summary",
+                "label": "Summary"
+            },
+            {
+                "name": "education",
+                "label": "Education"
+            },
+            {
+                "name": "experience",
+                "label": "Experience"
+            },
+            {
+                "name": "skills",
+                "label": "Skills"
+            }
+        ]
+    },
+    "template2": {
+        "image": "./images/test_my.png",
+        "description": "A creative and colorful CV template suitable for designers and creatives.",
+        "usage": "This template is suitable for designers and creatives who want to showcase their skills and experience in a creative and colorful way.",
+        "required_fields": [{
+                "name": "name",
+                "label": "Name"
+            },
+            {
+                "name": "address",
+                "label": "Address"
+            },
+            {
+                "name": "phone",
+                "label": "Phone"
+            },
+            {
+                "name": "email",
+                "label": "Email"
+            },
+            {
+                "name": "summary",
+                "label": "Summary"
+            },
+            {
+                "name": "education",
+                "label": "Education"
+            },
+            {
+                "name": "experience",
+                "label": "Experience"
+            },
+            {
+                "name": "skills",
+                "label": "Skills"
+            }
+        ]
+    }
+}
