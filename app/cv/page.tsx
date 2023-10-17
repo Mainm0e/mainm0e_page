@@ -1,6 +1,7 @@
 "use client";
 import React, { useEffect, useState } from "react";
 import CvTemplate from "@/components/common/CvTemplate";
+import CvForm from "@/components/common/CvForm";
 
 interface Fields {
   name: string;
@@ -79,6 +80,10 @@ export default function CV() {
             </section>
           </>
         )}
+
+      <section id="form" className="py-8">
+        <CvForm />
+      </section>
     </main>
   );
 }
