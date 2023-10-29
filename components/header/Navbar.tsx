@@ -26,7 +26,6 @@ function Navbar() {
       setPath(window.location.pathname);
       const currentPosition = window.scrollY;
       setScrollPosition(currentPosition);
-      console.log(currentPosition);
       navStyle = getNavStyle(scrollPosition);
     };
 
