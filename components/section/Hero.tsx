@@ -4,9 +4,9 @@ export default function Hero() {
   return (
     <div
       className="hero min-h-screen bg-cover bg-center relative flex items-center bg-primary"
-      /* style={{
-        backgroundImage: "url('/images/tausta_flamingo.jpg')",
-      }} */
+       style={{
+        backgroundImage: "url('/images/hero.jpeg')",
+      }} 
     >
       <div className="container mx-auto text-center relative z-10">
         <h1 className="text-5xl font-bold text-white mb-4">

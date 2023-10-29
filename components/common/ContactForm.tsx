@@ -16,6 +16,7 @@ export default function ContactForm() {
 
   const onSubmit = (data: FormData) => {
     console.log(data);
+    // display toast message 
     toast.custom((t) => (
       <div
         className={`${
@@ -73,6 +74,7 @@ export default function ContactForm() {
             render={({ field }) => (
               <input
                 {...field}
+                id="firstName"
                 className="appearance-none block w-full bg-gray-200 text-gray-700 border border-gray-200 rounded py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white focus:border-primary"
                 placeholder="Jane"
               />
@@ -95,6 +97,7 @@ export default function ContactForm() {
             render={({ field }) => (
               <input
                 {...field}
+                id="lastName"
                 className="appearance-none block w-full bg-gray-200 text-gray-700 border border-gray-200 rounded py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white focus:border-primary"
                 placeholder="Doe"
               />
@@ -117,6 +120,7 @@ export default function ContactForm() {
             render={({ field }) => (
               <textarea
                 {...field}
+                id="message"
                 className="appearance-none block w-full bg-gray-200 text-gray-700 border border-gray-200 rounded py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white focus:border-primary h-48 resize-none"
                 placeholder="Your message"
               />

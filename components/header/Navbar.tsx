@@ -26,7 +26,8 @@ function Navbar() {
       setPath(window.location.pathname);
       const currentPosition = window.scrollY;
       setScrollPosition(currentPosition);
-      navStyle = getNavStyle(scrollPosition)
+      console.log(currentPosition);
+      navStyle = getNavStyle(scrollPosition);
     };
 
     // Add the scroll event listener when the component mounts
@@ -42,7 +43,6 @@ function Navbar() {
     defaultpath = path;
     setPath(path);
   };
-  
 
   return (
     <>
