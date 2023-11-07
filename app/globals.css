@@ -2,7 +2,21 @@
 @tailwind components;
 @tailwind utilities;
 body {
-    @apply bg-secondary;
+    background-color: #F1F1F4;
+    /* Other body styles */
+    /* This pseudo-element represents the area outside the viewport when there's an overflow */
+    &::after {
+        content: '';
+        position: fixed;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        background-color: #F1F1F4;
+        /* Set the color you want for the overflow background */
+        z-index: -1;
+        /* Place it behind the content */
+    }
 }
 
 .circles {
