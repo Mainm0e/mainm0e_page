@@ -22,7 +22,7 @@ export default function ContactForm() {
       <div
         className={`${
           t.visible ? "animate-enter" : "animate-leave"
-        } max-w-md  bg-accent shadow-lg  pointer-events-auto flex ring-1 ring-black ring-opacity-5 border-2 border-primary`}
+        } max-w-md w-full  bg-accent shadow-lg  pointer-events-auto flex ring-1 ring-black ring-opacity-5 border-2 border-primary`}
       >
         <div className="flex-1 w-0 p-4">
           <div className="flex items-start">
