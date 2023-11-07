@@ -4,11 +4,81 @@
         "firstName": "Adithep",
         "lastName": "Tamwisai",
         "email": "tamwisai.adithep@gmail.com",
-        "phone": "+358-41-318-9619",
-        "description": " ",
+        "phone": "+358 41 318 9619",
+        "description": "I'm Adi, originally from Thailand and now calling Finland home. I'm an aspiring Full-Stack Developer with a strong desire to learn, grow, and make a meaningful impact in the field of web development. While I may be considered a junior, my enthusiasm for technology is boundless, and I'm eager to embark on this exciting journey of continuous improvement. I believe in the power of collaboration and see every project as an opportunity to refine my skills and contribute to a team's success. I'm seeking a dynamic environment that fosters growth and provides mentorship as I build a foundation for a promising career in Full-Stack Development.",
         "image": "./images/adithep_tamwisai.jpg",
         "linkedin": "https://www.linkedin.com/in/adithep-tamwisai-3b0a7525b/",
-        "github": "https://github.com/Mainm0e"
-    }]
+        "github": "https://github.com/Mainm0e",
+        "skills": {
+            "frontendSkills": [{
+                    "skill": "HTML5",
+                    "experience": "Advanced",
+                    "icon": "devicon-html5-plain-wordmark colored"
+                },
+                {
+                    "skill": "CSS3",
+                    "experience": "Intermediate",
+                    "icon": "devicon-css3-plain-wordmark colored"
+                },
+                {
+                    "skill": "Javascript",
+                    "experience": "Advanced",
+                    "icon": "devicon-javascript-plain colored"
+                },
+                {
+                    "skill": "Typescript",
+                    "experience": "",
+                    "icon": "devicon-typescript-plain colored"
+                },
+                {
+                    "skill": "React",
+                    "experience": "Intermediate",
+                    "icon": "devicon-react-original colored"
+                },
+                {
+                    "skill": "Next.js",
+                    "experience": "",
+                    "icon": "devicon-nextjs-original colored"
+                },
+                {
+                    "skill": "Tailwind",
+                    "experience": "Intermediate",
+                    "icon": "devicon-tailwindcss-plain colored"
+                }
+            ],
+            "backSkills": [{
+                    "skill": "Golang",
+                    "experience": "Intermediate",
+                    "icon": "devicon-go-original-wordmark colored"
+                },
+                {
+                    "skill": "Rust",
+                    "experience": "",
+                    "icon": "devicon-rust-plain colored"
+                },
+                {
+                    "skill": "Sqlite",
+                    "experience": "Intermediate",
+                    "icon": "devicon-sqlite-plain colored"
+                }
+            ],
 
+            "applications": [{
+                    "skill": "Github",
+                    "experience": "Advanced",
+                    "icon": "devicon-github-original colored"
+                },
+                {
+                    "skill": "vscode",
+                    "experience": "",
+                    "icon": "devicon-vscode-plain colored"
+                },
+                {
+                    "skill": "docker",
+                    "experience": "",
+                    "icon": "devicon-docker-plain colored"
+                }
+            ]
+        }
+    }]
 }

@@ -3,7 +3,7 @@ import Image from "next/image";
 export default function Hero() {
   return (
     <div
-      className="hero min-h-screen bg-cover bg-center relative flex items-center bg-primary"
+      className="hero min-h-screen bg-cover bg-center relative flex items-center bg-red-600"
        style={{
         backgroundImage: "url('/images/hero.jpeg')",
       }} 
