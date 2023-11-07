@@ -9,15 +9,15 @@ export default function Footer() {
         <nav className="flex flex-wrap justify-center -mx-5 -my-2">
           <div className="px-5 py-2">
             <Link
-              href="/about"
+              href="/#introduction"
               className="text-base leading-6 text-gray-500 hover:text-gray-900"
             >
-              About
+              Introduction
             </Link>
           </div>
           <div className="px-5 py-2">
             <Link
-              href="/contact"
+              href="/#contact_form"
               className="text-base leading-6 text-gray-500 hover:text-gray-900"
             >
               Contact
@@ -25,15 +25,15 @@ export default function Footer() {
           </div>
           <div className="px-5 py-2">
             <Link
-              href="#"
+              href="/#services"
               className="text-base leading-6 text-gray-500 hover:text-gray-900"
             >
-              Terms
+              Services
             </Link>
           </div>
         </nav>
         <div className="flex justify-center mt-8 space-x-6">
-          <Link
+        {/*   <Link
             href="https://www.instagram.com/mainm0e/"
             className="text-gray-400 hover:text-gray-500"
           >
@@ -50,7 +50,7 @@ export default function Footer() {
                 clipRule="evenodd"
               ></path>
             </svg>
-          </Link>
+          </Link> */}
           {/*    <Link href="#" className="text-gray-400 hover:text-gray-500">
                         <span className="sr-only">Twitter</span>
                         <svg className="w-6 h-6" aria-hidden="true" fill="currentColor" viewBox="0 0 24 24">
