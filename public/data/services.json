@@ -2,20 +2,20 @@
     "my_services": {
         "web applications": [{
                 "Title": "Support & Maintenance",
-                "Description": "Making Front-End",
+                "Description": "We provide ongoing support and maintenance to ensure your web application remains up-to-date and secure. This includes regular updates, bug fixes, and performance optimization.",
                 "Icon": "fa-solid fa-screwdriver-wrench fa-bounce"
             },
             {
                 "Title": "Development",
-                "Description": "Making Front-End",
+                "Description": "Our team specializes in developing robust and scalable web applications using the latest technologies. We focus on creating efficient, clean, and maintainable code.",
+
                 "Icon": "fa-solid fa-code fa-beat"
             },
             {
                 "Title": "Design",
-                "Description": "Making Front-End",
+                "Description": "We create intuitive and engaging designs for your web applications. Our design process focuses on usability, user experience, and visual aesthetics.",
                 "Icon": "fa-solid fa-paintbrush fa-flip"
             }
-
         ]
     }
 }
