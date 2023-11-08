@@ -9,7 +9,7 @@ export default function OnlyContact(props: {
   return (
     <Link href={`/developer_list#${props.name}`}>
       <div
-        className="bg-accent shadow-xl rounded-lg p-6 max-w-sm mx-auto flex flex-col justify-center items-center hover:scale-105  transition-transform cursor-pointer "
+        className="bg-accent shadow-xl rounded-lg p-6 max-w-sm mx-auto flex flex-col justify-center items-center hover:scale-105 hover:bg-white  transition-transform cursor-pointer "
       >
         <img
           src={props.imageUrl}

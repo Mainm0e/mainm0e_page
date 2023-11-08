@@ -46,6 +46,17 @@ const config: Config = {
         "btn-primary": "#252C4A",
         "btn-hover": "#7C808F",
       },
+      /* animations */
+        keyframes: {
+          shake: {
+            '0%, 100%': { transform: 'translateX(0)' },
+            '10%, 30%, 50%, 70%, 90%': { transform: 'translateX(-1px)' },
+            '20%, 40%, 60%, 80%': { transform: 'translateX(1px)' },
+          }
+        },
+        animation: {
+          shake: 'shake 0.7s ease-in-out ',
+        },
     },
   },
   daisyui: {
