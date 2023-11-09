@@ -12,7 +12,7 @@ export default function Home() {
   return (
     <>
       <header>
-        <Navbar />
+        <Navbar hidden={true} />
       </header>
       <main className="">
         {/* hero section for */}
