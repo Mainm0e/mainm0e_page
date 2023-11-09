@@ -85,6 +85,7 @@ export default function ContactForm() {
                 name="email"
                 className="appearance-none block  bg-gray-200 text-gray-700 border border-gray-200 rounded py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white focus:border-primary w-full"
                 placeholder="example@email.com"
+                required
               />
             )}
           />
@@ -111,7 +112,8 @@ export default function ContactForm() {
                 type="text"
                 name="name"
                 className="appearance-none block  bg-gray-200 text-gray-700 border border-gray-200 rounded py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white focus:border-primary w-full"
-                placeholder="Jane"
+                placeholder="Tomi Ripatti"
+                required
               />
             )}
           />
@@ -136,7 +138,8 @@ export default function ContactForm() {
                 type="text"
                 name="subject"
                 className="appearance-none block  bg-gray-200 text-gray-700 border border-gray-200 rounded py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white focus:border-primary w-full"
-                placeholder="Doe"
+                placeholder="Subject"
+                required
               />
             )}
           />
