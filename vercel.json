@@ -1,0 +1,8 @@
+{
+    "headers": [{
+        "source": "/api/sendEmail",
+        "headers": [
+            { "key": "Access-Control-Allow-Origin", "value": "*" }
+        ]
+    }]
+}
