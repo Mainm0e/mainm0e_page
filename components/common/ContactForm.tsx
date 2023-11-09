@@ -13,49 +13,14 @@ interface FormData {
 }
 
 export default function ContactForm() {
-  const { handleSubmit, control } = useForm<FormData>();
+  const { handleSubmit, control, reset } = useForm<FormData>();
 
   const onSubmit = (data: FormData) => {
     sendEmail(data);
-    // display toast message
-    toast.custom((t) => (
-      <div
-        className={`${
-          t.visible ? "animate-enter" : "animate-leave"
-        } max-w-md w-full  bg-accent shadow-lg  pointer-events-auto flex ring-1 ring-black ring-opacity-5 border-2 border-primary`}
-      >
-        <div className="flex-1 w-0 p-4">
-          <div className="flex items-start">
-            <div className="flex-shrink-0 pt-0.5">
-              <img
-                className="h-10 w-10 rounded-full border-2 border-primary"
-                src="./images/home.jpg"
-                alt=""
-              />
-            </div>
-            <div className="ml-3 flex-1">
-              <p className="text-sm font-medium text-text-label">
-                Adithep Tamwisai
-              </p>
-              <p className="mt-1 text-sm text-text-neutral">
-                Sorry, this feature is not available yet. Please contact me via
-                email or social media.
-              </p>
-            </div>
-          </div>
-        </div>
-        <div className="flex border-l-2 border-primary">
-          <button
-            onClick={() => toast.dismiss(t.id)}
-            className=" border border-transparent rounded-none p-4 flex items-center justify-center text-sm font-medium bg-btn-primary hover:bg-btn-hover text-text-hover focus:outline-none"
-          >
-            Close
-          </button>
-        </div>
-      </div>
-    ));
 
-    // Handle form submission here
+    /* clear input */
+    reset();
+    /* adding cookie for cannot spam email */
   };
 
   return (
@@ -89,8 +54,7 @@ export default function ContactForm() {
               />
             )}
           />
-          <input type="hidden" name="_template" value="table">
-          </input>
+          <input type="hidden" name="_template" value="table"></input>
         </div>
       </div>
       <div className="flex flex-wrap w-full ">
@@ -186,20 +150,94 @@ export default function ContactForm() {
 
 const sendEmail = async (e: FormData) => {
   const formData = new FormData();
-  console.log(e);
-  console.log(process.env.NEXT_PUBLIC_EMAILJS_SERVICE_ID);
-  formData.append('name', `from ${e.fullname} <${e.email}>`);
-  formData.append('message', `subject: ${e.subject}\nmessage: ${e.message}`);
+  formData.append("name", `from ${e.fullname} <${e.email}>`);
+  formData.append("message", `subject: ${e.subject}\nmessage: ${e.message}`);
 
   try {
-    const response = await fetch("https://formsubmit.co/ajax/caccb5383225b16fe863af2f612bfbda", {
-      method: "POST",
-      body: formData,
-    });
+    const response = await fetch(
+      "https://formsubmit.co/ajax/caccb5383225b16fe863af2f612bfbda",
+      {
+        method: "POST",
+        body: formData,
+      }
+    );
 
     const data = await response.json();
     console.log(data);
+    // display toast message
+    toast.custom((t) => (
+      <div
+        className={`${
+          t.visible ? "animate-enter" : "animate-leave"
+        } max-w-md w-full  bg-accent shadow-lg  pointer-events-auto flex ring-1 ring-black ring-opacity-5 border-2 border-primary`}
+      >
+        <div className="flex-1 w-0 p-4">
+          <div className="flex items-start">
+            <div className="flex-shrink-0 pt-0.5">
+              <img
+                className="h-10 w-10 rounded-full border-2 border-primary"
+                src="./images/home.jpg"
+                alt=""
+              />
+            </div>
+            <div className="ml-3 flex-1">
+              <p className="text-sm font-medium text-text-label">
+                Adithep Tamwisai
+              </p>
+              <p className="mt-1 text-sm text-text-neutral">
+                Thank you for your message. I will get back to you as soon as
+                possible.
+              </p>
+            </div>
+          </div>
+        </div>
+        <div className="flex border-l-2 border-primary">
+          <button
+            onClick={() => toast.dismiss(t.id)}
+            className=" border border-transparent rounded-none p-4 flex items-center justify-center text-sm font-medium bg-btn-primary hover:bg-btn-hover text-text-hover focus:outline-none"
+          >
+            Close
+          </button>
+        </div>
+      </div>
+    ));
   } catch (error) {
-    console.error('Error sending email:', error);
+    console.error("Error sending email:", error);
+    toast.custom((t) => (
+      <div
+        className={`${
+          t.visible ? "animate-enter" : "animate-leave"
+        } max-w-md w-full  bg-accent shadow-lg  pointer-events-auto flex ring-1 ring-black ring-opacity-5 border-2 border-primary`}
+      >
+        <div className="flex-1 w-0 p-4">
+          <div className="flex items-start">
+            <div className="flex-shrink-0 pt-0.5">
+              <img
+                className="h-10 w-10 rounded-full border-2 border-primary"
+                src="./images/home.jpg"
+                alt=""
+              />
+            </div>
+            <div className="ml-3 flex-1">
+              <p className="text-sm font-medium text-text-label">
+                Adithep Tamwisai
+              </p>
+              <p className="mt-1 text-sm text-text-neutral">
+                Sorry, this feature is not available yet. Please contact me via
+                email or social media.
+              </p>
+            </div>
+          </div>
+        </div>
+        <div className="flex border-l-2 border-primary">
+          <button
+            onClick={() => toast.dismiss(t.id)}
+            className=" border border-transparent rounded-none p-4 flex items-center justify-center text-sm font-medium bg-btn-primary hover:bg-btn-hover text-text-hover focus:outline-none"
+          >
+            Close
+          </button>
+        </div>
+      </div>
+    ));
   }
 };
