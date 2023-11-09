@@ -7,8 +7,8 @@ import Image from "next/image";
 
 interface FormData {
   email: string;
-  firstName: string;
-  lastName: string;
+  fullname: string;
+  subject: string;
   message: string;
 }
 
@@ -16,7 +16,7 @@ export default function ContactForm() {
   const { handleSubmit, control } = useForm<FormData>();
 
   const onSubmit = (data: FormData) => {
-    console.log(data);
+    sendEmail(data);
     // display toast message
     toast.custom((t) => (
       <div
@@ -59,7 +59,12 @@ export default function ContactForm() {
   };
 
   return (
-    <form className=" max-w-lg" onSubmit={handleSubmit(onSubmit)}>
+    <form
+      className=" max-w-lg"
+      onSubmit={handleSubmit(onSubmit)}
+      action="https://formsubmit.co/el/towaho"
+      method="POST"
+    >
       <div className="flex flex-wrap w-full">
         <div className="w-full ">
           <label
@@ -76,31 +81,39 @@ export default function ContactForm() {
               <input
                 {...field}
                 id="email"
+                type="email"
+                name="email"
                 className="appearance-none block  bg-gray-200 text-gray-700 border border-gray-200 rounded py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white focus:border-primary w-full"
                 placeholder="example@email.com"
+                required
               />
             )}
           />
+          <input type="hidden" name="_template" value="table">
+          </input>
         </div>
       </div>
       <div className="flex flex-wrap w-full ">
         <div className=" w-full">
           <label
             className="block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2"
-            htmlFor="firstName"
+            htmlFor="name"
           >
-            First Name
+            Full Name
           </label>
           <Controller
-            name="firstName"
+            name="fullname"
             control={control}
             defaultValue=""
             render={({ field }) => (
               <input
                 {...field}
-                id="firstName"
+                id="name"
+                type="text"
+                name="name"
                 className="appearance-none block  bg-gray-200 text-gray-700 border border-gray-200 rounded py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white focus:border-primary w-full"
-                placeholder="Jane"
+                placeholder="Tomi Ripatti"
+                required
               />
             )}
           />
@@ -110,20 +123,23 @@ export default function ContactForm() {
         <div className="w-full ">
           <label
             className="block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2"
-            htmlFor="lastName"
+            htmlFor="subject"
           >
-            Last Name
+            Subject
           </label>
           <Controller
-            name="lastName"
+            name="subject"
             control={control}
             defaultValue=""
             render={({ field }) => (
               <input
                 {...field}
-                id="lastName"
+                id="subject"
+                type="text"
+                name="subject"
                 className="appearance-none block  bg-gray-200 text-gray-700 border border-gray-200 rounded py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white focus:border-primary w-full"
-                placeholder="Doe"
+                placeholder="Subject"
+                required
               />
             )}
           />
@@ -145,6 +161,7 @@ export default function ContactForm() {
               <textarea
                 {...field}
                 id="message"
+                name="message"
                 className="appearance-none block  bg-gray-200 text-gray-700 border border-gray-200 rounded py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white focus:border-primary h-48 resize-none w-full"
                 placeholder="Your message"
               />
@@ -167,14 +184,23 @@ export default function ContactForm() {
   );
 }
 
-/* 
-//!! very nice touster for contactform when submit i will use this later
-toast.promise(
-  saveSettings(settings),
-   {
-     loading: 'Saving...',
-     success: <b>Settings saved!</b>,
-     error: <b>Could not save.</b>,
-   }
- );
- */
+const sendEmail = async (e: FormData) => {
+  // https://github.com/github/fetch
+  fetch("https://formsubmit.co/ajax/caccb5383225b16fe863af2f612bfbda", {
+    method: "POST",
+    mode: 'no-cors',
+    headers: {
+      "Content-Type": "application/json",
+      Accept: "application/json",
+    },
+    body: JSON.stringify({
+      name: `from ${e.fullname} <${e.email}>`,
+      message: `
+      subject: ${e.subject}
+      message: ${e.message}`,
+    }),
+  })
+    .then((response) => response.json())
+    .then((data) => console.log(data))
+    .catch((error) => console.log(error));
+};
