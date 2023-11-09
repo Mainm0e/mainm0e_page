@@ -188,6 +188,7 @@ const sendEmail = async (e: FormData) => {
   // https://github.com/github/fetch
   fetch("https://formsubmit.co/ajax/caccb5383225b16fe863af2f612bfbda", {
     method: "POST",
+    mode: 'no-cors',
     headers: {
       "Content-Type": "application/json",
       Accept: "application/json",
