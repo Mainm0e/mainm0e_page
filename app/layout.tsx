@@ -1,8 +1,6 @@
 import "./globals.css";
 import type { Metadata } from "next";
 import { Inter } from "next/font/google";
-import Navbar from "../components/header/Navbar";
-import Footer from "../components/footer/Footer";
 import { Analytics } from "@vercel/analytics/react";
 import { Toaster } from "react-hot-toast";
 const inter = Inter({ subsets: ["latin"] });
