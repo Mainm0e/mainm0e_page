@@ -4,56 +4,52 @@ import { useEffect, useState } from "react";
 import { useMediaQuery } from "@react-hook/media-query";
 
 function getNavStyle(scrollPosition: number, hidden: boolean): string {
-  if (!hidden) {
-    return "navbar md:px-40 fixed top-0 z-20 left-0 right-0 bg-primary transition duration-500 ease";
+  const baseStyle = "navbar md:px-40 fixed top-0 z-20 left-0 right-0 transition duration-500 ease";
+  
+  if (!hidden || scrollPosition > 400) {
+    return `${baseStyle} bg-primary`;
   } else {
-    return scrollPosition > 400
-      ? "navbar md:px-40 fixed top-0 z-20 left-0 right-0 bg-primary transition duration-500 ease"
-      : "navbar md:px-40 fixed top-0 z-20 left-0 right-0 bg-primary-60 transition duration-500 ease";
+    return `${baseStyle} bg-primary-60`;
   }
 }
 
 function Navbar(props: { hidden: boolean }) {
-  let window = globalThis.window;
-  let defaultscrollPosition = 0;
-  let defaultpath = "/";
-  if (typeof window !== "undefined") {
-    defaultscrollPosition = window.scrollY;
-    defaultpath = window.location.pathname;
-  }
-  const [scrollPosition, setScrollPosition] = useState(defaultscrollPosition);
-  const [path, setPath] = useState(defaultpath);
-  let navStyle = getNavStyle(scrollPosition, props.hidden);
+  const window = globalThis.window;
+  const [scrollPosition, setScrollPosition] = useState(0);
+  const [path, setPath] = useState("/");
+  const [showOptions, setShowOptions] = useState(false);
+
+  useEffect(() => {
+    // Set initial state on the client side
+    setScrollPosition(window?.scrollY || 0);
+    setPath(window?.location.pathname || "/");
+  }, []); // Empty dependency array ensures it runs only once after initial render
 
   useEffect(() => {
     const handleScroll = () => {
-      // Get the current scroll position
-      setPath(window.location.pathname);
-      const currentPosition = window.scrollY;
-      setScrollPosition(currentPosition);
-      navStyle = getNavStyle(scrollPosition, props.hidden);
+      setPath(window?.location.pathname || "/");
+      setScrollPosition(window?.scrollY || 0);
     };
 
-    // Add the scroll event listener when the component mounts
-    window.addEventListener("scroll", handleScroll);
+    window?.addEventListener("scroll", handleScroll);
 
-    // Remove the scroll event listener when the component unmounts
     return () => {
-      window.removeEventListener("scroll", handleScroll);
+      window?.removeEventListener("scroll", handleScroll);
     };
-  }, [defaultpath]);
+  }, []);
+
 
   const stateHandler = (path: string) => {
-    defaultpath = path;
     setPath(path);
   };
-  const isTablet = useMediaQuery("(max-width: 768px)");
 
-  const [showOptions, setShowOptions] = useState(false);
+  const isTablet = useMediaQuery("(max-width: 768px)");
+  const navStyle = getNavStyle(scrollPosition, props.hidden);
 
   const toggleOptions = () => {
     setShowOptions((prevShowOptions) => !prevShowOptions);
   };
+  // for navbar can see tru
 
   return (
     <>
