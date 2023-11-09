@@ -186,7 +186,8 @@ export default function ContactForm() {
 
 const sendEmail = async (e: FormData) => {
   const formData = new FormData();
-
+  console.log(e);
+  console.log(process.env.NEXT_PUBLIC_EMAILJS_SERVICE_ID);
   formData.append('name', `from ${e.fullname} <${e.email}>`);
   formData.append('message', `subject: ${e.subject}\nmessage: ${e.message}`);
 
