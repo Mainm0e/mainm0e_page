@@ -185,22 +185,20 @@ export default function ContactForm() {
 }
 
 const sendEmail = async (e: FormData) => {
-  // https://github.com/github/fetch
-  fetch("https://formsubmit.co/ajax/caccb5383225b16fe863af2f612bfbda", {
-    method: "POST",
-    mode: 'no-cors',
-    headers: {
-      "Content-Type": "application/json",
-      Accept: "application/json",
-    },
-    body: JSON.stringify({
-      name: `from ${e.fullname} <${e.email}>`,
-      message: `
-      subject: ${e.subject}
-      message: ${e.message}`,
-    }),
-  })
-    .then((response) => response.json())
-    .then((data) => console.log(data))
-    .catch((error) => console.log(error));
+  const formData = new FormData();
+
+  formData.append('name', `from ${e.fullname} <${e.email}>`);
+  formData.append('message', `subject: ${e.subject}\nmessage: ${e.message}`);
+
+  try {
+    const response = await fetch("https://formsubmit.co/ajax/caccb5383225b16fe863af2f612bfbda", {
+      method: "POST",
+      body: formData,
+    });
+
+    const data = await response.json();
+    console.log(data);
+  } catch (error) {
+    console.error('Error sending email:', error);
+  }
 };
