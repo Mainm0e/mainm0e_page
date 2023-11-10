@@ -55,7 +55,7 @@ function Navbar(props: { hidden: boolean }) {
   return (
     <>
       <nav className={navStyle}>
-        <div className="flex-1">
+        <div className="w-full flex flex-row justify-between">
           <Link
             className="text-lg text-text-primary font-bold md:py-0 py-4"
             href={"/"}
