@@ -69,7 +69,7 @@ export default function DeveloperList() {
           <span className="loading loading-spinner loading-lg"></span>
         </div>
       ) : (
-        <main className="py-8 h-screen max-md:h-fit">
+        <main className="py-8 h-screen max-lg:h-fit">
           <div className="container pt-16 mx-auto">
             <h1 className="text-3xl font-semibold mb-8">Our developers</h1>
             <div className="">

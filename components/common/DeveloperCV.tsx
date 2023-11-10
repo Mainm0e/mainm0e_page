@@ -1,7 +1,8 @@
 "use client";
-import React from "react";
-import { useState } from "react";
 import Link from "next/link";
+import React, { useState, useEffect } from "react";
+import AOS from "aos";
+import "aos/dist/aos.css"; // You can also use <link> for styles
 
 export default function DeveloperCv(props: {
   key: number;
@@ -35,6 +36,13 @@ export default function DeveloperCv(props: {
   const [showSkills, setShowSkills] = useState(false);
   const [showSummary, setShowSummary] = useState(true);
 
+  // Initialize AOS when the component is mounted
+  useEffect(() => {
+    import("aos").then((aos) => {
+      aos.init();
+    });
+  }, []);
+
   const showData = () => {
     console.log("im testing 1+1 = null");
     if (showSkills == true) {
@@ -43,6 +51,13 @@ export default function DeveloperCv(props: {
     } else if (showSummary == true) {
       setShowSkills(true);
       setShowSummary(false);
+      // Manually trigger AOS animation on click
+      const element = document.getElementById("aosFlipContainer");
+      if (element) {
+        element.setAttribute("data-aos", "flip-left");
+        // Refresh AOS after changing the data-aos attribute
+        AOS.refresh();
+      }
     }
   };
 
@@ -70,7 +85,7 @@ export default function DeveloperCv(props: {
                 <p className="text-gray-600">{props.email}</p>
                 <p className="text-gray-600">{props.phone}</p>
                 <div className="mt-4 flex ">
-                <Link
+                  <Link
                     href="https://www.linkedin.com/in/adithep-tamwisai-3b0a7525b/"
                     className="text-blue-600 hover:text-blue-700"
                   >
@@ -102,7 +117,6 @@ export default function DeveloperCv(props: {
                       ></path>
                     </svg>
                   </Link>
-
                 </div>
               </div>
             </div>
@@ -112,8 +126,10 @@ export default function DeveloperCv(props: {
             {/* summary */}
             {showSummary && (
               <div
-                className="p-4 bg-white rounded-lg shadow-lg overflow-hidden cursor-pointer hover:bg-gray-100 hover:animate-shake "
+                id="aosFlipContainer"
+                className="p-4 bg-white rounded-lg shadow-lg overflow-hidden cursor-pointer hover:bg-gray-100  "
                 onClick={showData}
+                data-aos="flip-left" // Initial flip-left animation
               >
                 <h2 className="text-xl font-semibold">Me {props.name}</h2>
                 <p className="text-gray-600">{props.description}</p>
@@ -122,10 +138,11 @@ export default function DeveloperCv(props: {
             {/* skills */}
             {showSkills && (
               <div
-                className="bg-white rounded-lg shadow-lg overflow-hidden cursor-pointer hover:bg-gray-200 hover:animate-shake"
+                className="bg-white rounded-lg shadow-lg overflow-hidden cursor-pointer hover:bg-gray-200 "
                 onClick={showData}
+                data-aos="flip-right" // Initial flip-left animation
               >
-                <div className="p-4 flex flex-row gap-16">
+                <div className="p-4 flex flex-row gap-16 max-sm:gap-4">
                   {/* Frontend Skills */}
                   <div>
                     <h3 className="text-lg font-semibold">Frontend Skills</h3>
