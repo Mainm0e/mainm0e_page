@@ -41,6 +41,7 @@ function Navbar(props: { hidden: boolean }) {
 
   const stateHandler = (path: string) => {
     setPath(path);
+    setShowOptions(false);
   };
 
   const isTablet = useMediaQuery("(max-width: 768px)");
@@ -49,7 +50,7 @@ function Navbar(props: { hidden: boolean }) {
   const toggleOptions = () => {
     setShowOptions((prevShowOptions) => !prevShowOptions);
   };
-  // for navbar can see tru
+  // for navbar can see true or false
 
   return (
     <>
@@ -62,12 +63,10 @@ function Navbar(props: { hidden: boolean }) {
           >
             Mainm0e
           </Link>
-        </div>
-        {isTablet ? (
-          // Render options button or menu here
           <div className="flex-none">
+            {/* menu options  it will display none when */}
             <button
-              className="btn btn-square btn-ghost"
+              className="btn btn-square btn-ghost  md:hidden"
               onClick={toggleOptions}
             >
               <svg
@@ -85,11 +84,11 @@ function Navbar(props: { hidden: boolean }) {
               </svg>
             </button>
             {showOptions && (
-              <ul className="menu menu-vertical px-1 absolute top-16 right-5 bg-primary">
+              <ul className="menu menu-vertical px-1 absolute top-16 right-5 bg-primary md:hidden">
                 <li>
                   <Link
                     href={"/"}
-                    className="text-text-primary rounded-none hover:bg-primary hover:text-text-hover"
+                    className="text-text-primary rounded-none hover:bg-gray-60 hover:text-text-hover"
                     onClick={() => stateHandler("/")}
                   >
                     Home
@@ -98,7 +97,7 @@ function Navbar(props: { hidden: boolean }) {
                 <li>
                   <Link
                     href={"/#introduction"}
-                    className="text-text-primary rounded-none hover:bg-primary hover:text-text-hover"
+                    className="text-text-primary rounded-none hover:bg-gray-60 hover:text-text-hover"
                     onClick={() => stateHandler("/#introduction")}
                   >
                     Introduction
@@ -107,7 +106,7 @@ function Navbar(props: { hidden: boolean }) {
                 <li>
                   <Link
                     href={"/#services"}
-                    className="text-text-primary rounded-none hover:bg-primary hover:text-text-hover"
+                    className="text-text-primary rounded-none hover:bg-gray-60 hover:text-text-hover"
                     onClick={() => stateHandler("/#services")}
                   >
                     Services
@@ -116,7 +115,7 @@ function Navbar(props: { hidden: boolean }) {
                 <li>
                   <Link
                     href={"/#contact"}
-                    className="text-text-primary rounded-none hover:bg-primary hover:text-text-hover"
+                    className="text-text-primary rounded-none hover:bg-gray-60 hover:text-text-hover"
                     onClick={() => stateHandler("/#contact")}
                   >
                     Developers
@@ -125,7 +124,7 @@ function Navbar(props: { hidden: boolean }) {
                 <li>
                   <Link
                     href={"/#contact_form"}
-                    className="text-text-primary rounded-none hover:bg-primary hover:text-text-hover"
+                    className="text-text-primary rounded-none hover:bg-gray-60 hover:text-text-hover"
                     onClick={() => stateHandler("/#contact_form")}
                   >
                     Contact
@@ -133,11 +132,8 @@ function Navbar(props: { hidden: boolean }) {
                 </li>
               </ul>
             )}
-          </div>
-        ) : (
-          // Render regular navigation links here
-          <div className="flex-none">
-            <ul className="menu menu-horizontal px-1">
+            {/* menu options */}
+            <ul className=" menu menu-horizontal px-1 max-md:hidden ">
               <li>
                 <Link
                   href={"/"}
@@ -185,10 +181,12 @@ function Navbar(props: { hidden: boolean }) {
               </li>
             </ul>
           </div>
-        )}
+        </div>
+       
       </nav>
     </>
   );
 }
 
 export default Navbar;
+
